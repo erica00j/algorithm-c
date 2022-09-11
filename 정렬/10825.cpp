@@ -4,12 +4,12 @@
 
 using namespace std;
 
-typedef struct { //±¸Á¶Ã¼ Á¤ÀÇ
+typedef struct { //êµ¬ì¡°ì²´ ì •ì˜
 	string name;
 	int kor, eng, math;
 } Student;
 
-bool compare(const Student& a, const Student& b) { //ºñ±³ ÇÔ¼ö Á¤ÀÇ
+bool compare(const Student& a, const Student& b) { //ë¹„êµ í•¨ìˆ˜ ì •ì˜
 	if (a.kor == b.kor) {
 		if (a.eng == b.eng) {
 			if (a.math == b.math) {
@@ -22,26 +22,26 @@ bool compare(const Student& a, const Student& b) { //ºñ±³ ÇÔ¼ö Á¤ÀÇ
 	return a.kor > b.kor;
 }
 vector<string> solution(int n, vector<string> name, vector<int>kor, vector<int> eng, vector<int> math) {
-	vector<string> answer(n); //Á¤´äÀ» ´ãÀ» vector ¼±¾ğ
-	Student arr[n + 1]; //Student ±¸Á¶Ã¼ ¹è¿­
+	vector<string> answer(n); //ì •ë‹µì„ ë‹´ì„ vector ì„ ì–¸
+	Student arr[n + 1]; //Student êµ¬ì¡°ì²´ ë°°ì—´
 	for (int i = 0; i < n; i++) arr[i] = { name[i],kor[i],eng[i],math[i] };
-	sort(arr, arr + n, compare); //Á¤·Ä
+	sort(arr, arr + n, compare); //ì •ë ¬
 	for (int i = 0; i < n; i++) answer[i] = arr[i].name;
 	return answer;
 }
 
 int main() {
 	int n;
-	cin >> n; //ÇĞ»ı ¼ö ÀÔ·Â
+	cin >> n; //í•™ìƒ ìˆ˜ ì…ë ¥
 	vector<string> name(n);
 	vector<int> kor(n);
 	vector<int> eng(n);
 	vector<int> math(n);
 
-	for (int i = 0; i < n; i++) { //ÇĞ»ı ÀÌ¸§ ÀÔ·Â
+	for (int i = 0; i < n; i++) { //í•™ìƒ ì´ë¦„ ì…ë ¥
 		cin >> name[i];
 	}
-	for (int i = 0; i < n; i++) { //ÇĞ»ı Á¡¼ö ÀÔ·Â
+	for (int i = 0; i < n; i++) { //í•™ìƒ ì ìˆ˜ ì…ë ¥
 		cin >> kor[i] >> eng[i] >> math[i];
 	}
 
@@ -50,4 +50,4 @@ int main() {
 	for (auto i : answer)
 		cout << i << '\n';
 	return 0;
-}
+} 
