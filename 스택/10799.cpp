@@ -31,4 +31,4 @@ int main() {
 	int answer = solution(str);
 	cout << answer;
 	return 0;
-} 
+}
