@@ -5,30 +5,30 @@ using namespace std;
 int main() {
 	int n, a;
 
-	//ìž…ë ¥
+	//ÀÔ·Â
 	cin >> n;
 
-	//ì™„ì „ íƒìƒ‰ 
-	for (int i = 0; i <= n; i++) { //0ê³¼ n ì‚¬ì´ì˜ ìƒì„±ìž ì°¾ê¸°
+	//¿ÏÀü Å½»ö 
+	for (int i = 0; i <= n; i++) { //0°ú n »çÀÌÀÇ »ý¼ºÀÚ Ã£±â
 		int sum = i;
 		int tmp = i;
 
 		while (tmp > 0) {
-			//ê° ìžë¦¿ìˆ˜ ë”í•˜ëŠ” ë¡œì§ (ëª«ê³¼ ë‚˜ë¨¸ì§€ë¥¼ í†µí•´ ê° ìžë¦¿ìˆ˜ ë–¼ì–´ë‚´ê¸°)
-			sum += (tmp % 10); //ê¸°ì¡´ sumì— ì˜¤ë¥¸ìª½ ëìžë¦¬ ìˆ˜ í•©í•˜ê¸°
-			tmp /= 10; //í•©í•œ ì˜¤ë¥¸ìª½ ëìžë¦¬ ìˆ˜ ì œê±°
+			//°¢ ÀÚ¸´¼ö ´õÇÏ´Â ·ÎÁ÷ (¸ò°ú ³ª¸ÓÁö¸¦ ÅëÇØ °¢ ÀÚ¸´¼ö ¶¼¾î³»±â)
+			sum += (tmp % 10); //±âÁ¸ sum¿¡ ¿À¸¥ÂÊ ³¡ÀÚ¸® ¼ö ÇÕÇÏ±â
+			tmp /= 10; //ÇÕÇÑ ¿À¸¥ÂÊ ³¡ÀÚ¸® ¼ö Á¦°Å
 		}
-		if (n == sum) { //ë¶„í•´í•©ì´ nê³¼ ê°™ì•„ì§ˆ ê²½ìš° ìƒì„±ìž ì¶œë ¥
+		if (n == sum) { //ºÐÇØÇÕÀÌ n°ú °°¾ÆÁú °æ¿ì »ý¼ºÀÚ Ãâ·Â
 			cout << i;
 			a++;
 			break;
 		}
-		else { //ë¶„í•´í•©ì´ nê³¼ ê°™ì€ ê²½ìš°ê°€ ì—†ì„ ë•Œ ìƒì„±ìž 0
+		else { //ºÐÇØÇÕÀÌ n°ú °°Àº °æ¿ì°¡ ¾øÀ» ¶§ »ý¼ºÀÚ 0
 			a = 0;
 		}
 	}
 
-	if (a == 0) { //ìƒì„±ìž 0 ì¶œë ¥
+	if (a == 0) { //»ý¼ºÀÚ 0 Ãâ·Â
 		cout << "0";
 	}
 }
