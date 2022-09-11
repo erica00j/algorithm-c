@@ -3,28 +3,28 @@
 using namespace std;
 
 int main() {
-	int N, M, a[100]; //N: ì¹´ë“œì˜ ê°œìˆ˜, a: ì¹´ë“œì˜ ìˆ«ìžë¥¼ ì €ìž¥í•˜ëŠ” ì¼ì°¨ì› ë°°ì—´
+	int N, M, a[100]; //N: Ä«µåÀÇ °³¼ö, a: Ä«µåÀÇ ¼ýÀÚ¸¦ ÀúÀåÇÏ´Â ÀÏÂ÷¿ø ¹è¿­
 	int sum = 0, near = 0;
-	
-	//ìž…ë ¥
+
+	//ÀÔ·Â
 	cin >> N >> M;
 	for (int i = 0; i < N; i++) {
-		cin >> a[i]; //ì¹´ë“œì˜ ìˆ«ìž ìž…ë ¥
+		cin >> a[i]; //Ä«µåÀÇ ¼ýÀÚ ÀÔ·Â
 	}
 
-	//ì™„ì „ íƒìƒ‰(Nìž¥ì˜ ì¹´ë“œ ì¤‘ 3ìž¥ì˜ ì¹´ë“œ ì¡°í•©ì˜ ê²½ìš°ì˜ ìˆ˜)
+	//¿ÏÀü Å½»ö(NÀåÀÇ Ä«µå Áß 3ÀåÀÇ Ä«µå Á¶ÇÕÀÇ °æ¿ìÀÇ ¼ö)
 	for (int i = 0; i < N; i++) {
-		for (int j = i+1; j < N; j++) {
+		for (int j = i + 1; j < N; j++) {
 			for (int k = j + 1; k < N; k++) {
-				sum = a[i] + a[j] + a[k]; //ê° ê²½ìš°ì˜ ìˆ˜ë§ˆë‹¤ 3ìž¥ì˜ ìˆ«ìž í•©ì„ sumì— ì €ìž¥
-				//sumì´ Më³´ë‹¤ ìž‘ê±°ë‚˜ ê°™ê³  ê¸°ì¡´ nearê°’ë³´ë‹¤ í¬ë‹¤ë©´ ìƒˆë¡œìš´ nearê°’ìœ¼ë¡œ ê°±ì‹ 
-				if (near < sum&&sum <= M) {
+				sum = a[i] + a[j] + a[k]; //°¢ °æ¿ìÀÇ ¼ö¸¶´Ù 3ÀåÀÇ ¼ýÀÚ ÇÕÀ» sum¿¡ ÀúÀå
+				//sumÀÌ Mº¸´Ù ÀÛ°Å³ª °°°í ±âÁ¸ near°ªº¸´Ù Å©´Ù¸é »õ·Î¿î near°ªÀ¸·Î °»½Å
+				if (near < sum && sum <= M) {
 					near = sum;
 				}
 			}
 		}
 	}
 
-	//ì¶œë ¥
+	//Ãâ·Â
 	cout << near;
 }
