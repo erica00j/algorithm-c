@@ -36,4 +36,3 @@ int main() {
     cout << solution(n);
     return 0;
 }
-
