@@ -32,7 +32,7 @@ int solution(int n, vector<int> lost, vector<int> reserve) {
     for (int i = 1; i <= n; i++) {
         if (clothes[i]) { //체육복 있는 학생 카운트
             answer++;
-        }
+        } 
     }
     return answer;
 }
