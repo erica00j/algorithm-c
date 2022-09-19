@@ -1,6 +1,8 @@
 #include <iostream>
 #include <vector>
+
 using namespace std;
+
 const int INF = 1e7 * 2; //최대 n-1개의 간선을 지나게 됨
 int graph[201][201]={0,};
 
