@@ -30,7 +30,7 @@ int solution(int n, int s, int a, int b, vector<vector<int>> fares, int lay) {
                 graph[i][j]=min(graph[i][j],graph[i][k]+graph[k][j]); //k 지점을 지나는 것이 더 저렴할 경우 업데이트
             }
         }
-    }
+    } 
     
     // 4. 최소 비용 계산
     // lay는 경유지
